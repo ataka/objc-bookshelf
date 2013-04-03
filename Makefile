@@ -4,8 +4,8 @@
 TARGET = bookshelf
 
 OBJC = gcc
-OBJCFLAGS = -W -Wall
-LIB = -lobjc
+OBJCFLAGS = -I/usr/include/GNUstep -fconstant-string-class=NSConstantString -W -Wall
+LIB = -lobjc -lgnustep-base
 
 all: $(TARGET)
 

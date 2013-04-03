@@ -1,18 +1,18 @@
-#import <objc/Object.h>
+#import <Foundation/NSObject.h>
 #import <stdio.h>
 
-@interface Point : Object
+@interface Point : NSObject
 {
-        int x;
+  int x;
 }
--(id) setX :(int)x;
+-(id) setX :(int)x_;
 -(int) getX;
 @end
 
 @implementation Point
--(id) setX :(int)x
+-(id) setX :(int)x_
 {
-  self->x = x;
+  x = x_;
   return self;
 }
 -(int) getX {
@@ -22,9 +22,12 @@
 
 int main(void)
 {
+//  NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+
   id point = [Point alloc];
   [point setX: 10];
   printf("Point X is %d\n.", [point getX]);
 
+//  [pool drain];
   return 0;
 }
