@@ -1,22 +1,22 @@
 #import <Foundation/Foundation.h>
 #import <stdio.h>
 
-@interface Point : NSObject
+@interface Book : NSObject
 {
-  int x;
+  char* title;
 }
--(id) setX :(int)x_;
--(int) getX;
+-(id) setTitle :(char*)t;
+-(char*) getTitle;
 @end
 
-@implementation Point
--(id) setX :(int)x_
+@implementation Book
+-(id) setTitle :(char*)t
 {
-  x = x_;
+  title = t;
   return self;
 }
--(int) getX {
-  return x;
+-(char*) getTitle {
+  return title;
 }
 @end
 
@@ -24,9 +24,9 @@ int main(void)
 {
 //  NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 
-  id point = [Point alloc];
-  [point setX: 10];
-  printf("Point X is %d\n.", [point getX]);
+  id book = [Book alloc];
+  [book setTitle: "Foundation"];
+  printf("Title: %s\n.", [book getTitle]);
 
 //  [pool drain];
   return 0;
