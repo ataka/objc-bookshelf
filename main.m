@@ -24,9 +24,16 @@ int main(void)
 {
   NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 
-  id book = [Book alloc];
-  [book setTitle: @"Foundation"];
-  printf("Title: %s\n", [[book getTitle] UTF8String]);
+  NSMutableArray* bookshelf = [[NSMutableArray alloc] init];
+
+  id book1 = [Book alloc];
+  [book1 setTitle: @"Foundation"];
+
+  [bookshelf addObject: book1];
+
+  for (id book in bookshelf){
+    printf("Title: %s\n", [[book getTitle] UTF8String]);
+  }
 
   [pool drain];
   return 0;
