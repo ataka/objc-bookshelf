@@ -26,7 +26,7 @@ int main(void)
 
   NSMutableArray* bookshelf = [[NSMutableArray alloc] init];
 
-  id book1 = [Book alloc];
+  Book* book1 = [Book alloc];
   [book1 setTitle: @"Foundation"];
 
   Book* book2 = [Book alloc];
