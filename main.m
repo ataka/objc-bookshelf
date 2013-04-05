@@ -32,8 +32,12 @@ int main(void)
   Book* book2 = [Book alloc];
   [book2 setTitle: @"Foundation and Empire"];
 
+  Book* book3 = [Book alloc];
+  [book3 setTitle: @"Second Foundation"];
+
   [bookshelf addObject: book1];
   [bookshelf addObject: book2];
+  [bookshelf addObject: book3];
 
   for (id book in bookshelf){
     printf("Title: %s\n", [[book getTitle] UTF8String]);
