@@ -26,7 +26,7 @@ int main(void)
 
   id book = [Book alloc];
   [book setTitle: @"Foundation"];
-  printf("Title: %s\n.", [[book getTitle] UTF8String]);
+  printf("Title: %s\n", [[book getTitle] UTF8String]);
 
   [pool drain];
   return 0;
