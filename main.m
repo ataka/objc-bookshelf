@@ -22,12 +22,12 @@
 
 int main(void)
 {
-//  NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+  NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 
   id book = [Book alloc];
   [book setTitle: @"Foundation"];
   printf("Title: %s\n.", [[book getTitle] UTF8String]);
 
-//  [pool drain];
+  [pool drain];
   return 0;
 }
