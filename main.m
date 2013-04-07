@@ -1,35 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <stdio.h>
-
-@interface Book : NSObject
-{
-  NSString* title;
-  NSString* author;
-}
--(id) setTitle :(NSString*)t;
--(id) setAuthor :(NSString*)a;
--(NSString*) getTitle;
--(NSString*) getAuthor;
-@end
-
-@implementation Book
--(id) setTitle :(NSString*)t
-{
-  title = t;
-  return self;
-}
--(id) setAuthor :(NSString*)a
-{
-  author = a;
-  return self;
-}
--(NSString*) getTitle {
-  return title;
-}
--(NSString*) getAuthor {
-  return author;
-}
-@end
+#import "book.h"
 
 int main(void)
 {
