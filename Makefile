@@ -22,6 +22,6 @@ RM = rm -f
 
 clean:
 	$(RM) *~
-	$(RM) *.o
+	$(RM) *.o *.d
 distclean: clean
 	$(RM) $(TARGET)
