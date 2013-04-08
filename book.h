@@ -3,7 +3,7 @@
   NSString* title;
   NSString* author;
 }
-@property(retain) NSString* title;
+@property(copy) NSString* title;
 -(id) setAuthor :(NSString*)a;
 -(NSString*) getAuthor;
 @end
