@@ -31,7 +31,7 @@ int main(void)
 
   for (id book in bookshelf){
     printf("Title: %s\n", [[book title] UTF8String]);
-    printf("Author: %s\n--\n", [[book getAuthor] UTF8String]);
+    printf("Author: %s\n--\n", [[book author] UTF8String]);
   }
 
   [pool drain];

@@ -3,12 +3,5 @@
 
 @implementation Book
 @synthesize title;
--(id) setAuthor :(NSString*)a
-{
-  author = a;
-  return self;
-}
--(NSString*) getAuthor {
-  return author;
-}
+@synthesize author;
 @end
