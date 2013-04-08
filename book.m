@@ -2,17 +2,20 @@
 #import "book.h"
 
 @implementation Book
--(id) setTitle :(NSString*)t
+@dynamic title;
+
+-(void) setTitle :(NSString*)t
 {
+  [t retain];
+  [title release];
   title = t;
-  return self;
 }
 -(id) setAuthor :(NSString*)a
 {
   author = a;
   return self;
 }
--(NSString*) getTitle {
+-(NSString*) title {
   return title;
 }
 -(NSString*) getAuthor {

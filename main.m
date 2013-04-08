@@ -30,7 +30,7 @@ int main(void)
   [bookshelf addObject: book4];
 
   for (id book in bookshelf){
-    printf("Title: %s\n", [[book getTitle] UTF8String]);
+    printf("Title: %s\n", [[book title] UTF8String]);
     printf("Author: %s\n--\n", [[book getAuthor] UTF8String]);
   }
 
