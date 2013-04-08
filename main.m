@@ -1,12 +1,14 @@
 #import <Foundation/Foundation.h>
 #import <stdio.h>
 #import "book.h"
+#import "Bookshelf.h"
 
 int main(void)
 {
   NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 
-  NSMutableArray* bookshelf = [[NSMutableArray alloc] init];
+  
+  Bookshelf* niigata = [[Bookshelf alloc] initWithPlace:@"Home at Niigata"];
 
   Book* book1 = [Book alloc];
   [book1 setTitle: @"Foundation"];
@@ -24,12 +26,13 @@ int main(void)
   [book4 setTitle: @"Ender's Game"];
   [book4 setAuthor: @"Orson Scott Card"];
 
-  [bookshelf addObject: book1];
-  [bookshelf addObject: book2];
-  [bookshelf addObject: book3];
-  [bookshelf addObject: book4];
+  [niigata addBook: book1];
+  [niigata addBook: book2];
+  [niigata addBook: book3];
+  [niigata addBook: book4];
 
-  for (id book in bookshelf){
+  printf("at %s\n----\n", [[niigata place] UTF8String]);
+  for (Book* book in [niigata books]){
     printf("Title: %s\n", [[book title] UTF8String]);
     printf("Author: %s\n--\n", [[book author] UTF8String]);
   }
