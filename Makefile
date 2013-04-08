@@ -9,7 +9,7 @@ LIB = -lobjc -lgnustep-base
 
 all: $(TARGET)
 
-$(TARGET): main.o book.o Bookshelf.o
+$(TARGET): main.o Book.o Bookshelf.o
 	$(OBJC) $(OBJCFLAGS) $^ $(LIB) -o $@
 
 %.o: %.m

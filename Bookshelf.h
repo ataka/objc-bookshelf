@@ -1,6 +1,6 @@
 // -*-ObjC-*-
 #import <Foundation/Foundation.h>
-#import "book.h"
+#import "Book.h"
 
 @interface Bookshelf : NSObject
 {
