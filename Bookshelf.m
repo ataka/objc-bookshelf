@@ -10,7 +10,7 @@
 }
 @synthesize place;
 
--(void) addBook: (Book*) newBook
+-(void) addBook: (NSDictionary*) newBook
 {
   [shelf addObject: newBook];
 }

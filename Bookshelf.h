@@ -1,6 +1,5 @@
 // -*-ObjC-*-
 #import <Foundation/Foundation.h>
-#import "Book.h"
 
 @interface Bookshelf : NSObject
 {
@@ -9,6 +8,6 @@
 }
 -(id) initWithPlace: (NSString*)str;
 @property(copy) NSString* place;
--(void) addBook: (Book*)newBook;
+-(void) addBook: (NSDictionary*)newBook;
 -(NSMutableArray*) books;
 @end

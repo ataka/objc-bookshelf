@@ -1,6 +1,5 @@
 #import <Foundation/Foundation.h>
 #import <stdio.h>
-#import "Book.h"
 #import "Bookshelf.h"
 
 int main(void)
@@ -10,21 +9,22 @@ int main(void)
   
   Bookshelf* niigata = [[Bookshelf alloc] initWithPlace:@"Home at Niigata"];
 
-  Book* book1 = [Book alloc];
-  book1.title  = @"Foundation";
-  book1.author = @"Isaac Asimov";
-
-  Book* book2 = [Book alloc];
-  book2.title  = @"Foundation and Empire";
-  book2.author = @"Isaac Asimov";
-
-  Book* book3 = [Book alloc];
-  book3.title  = @"Second Foundation";
-  book3.author = @"Isaac Asimov";
-
-  Book* book4 = [Book alloc];
-  book4.title  = @"Ender's Game";
-  book4.author = @"Orson Scott Card";
+  NSDictionary* book1 = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        @"Foundation", @"title",
+                                      @"Issac Asimov", @"author",
+                                      nil];
+  NSDictionary* book2 = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        @"Foundation and Empire", @"title",
+                                      @"Issac Asimov", @"author",
+                                      nil];
+  NSDictionary* book3 = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        @"Second Foundation", @"title",
+                                      @"Issac Asimov", @"author",
+                                      nil];
+  NSDictionary* book4 = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        @"Ender's Game", @"title",
+                                      @"Orson Scott Card", @"author",
+                                      nil];
 
   [niigata addBook: book1];
   [niigata addBook: book2];
@@ -32,9 +32,9 @@ int main(void)
   [niigata addBook: book4];
 
   printf("at %s\n----\n", [niigata.place UTF8String]);
-  for (Book* book in niigata.books){
-    printf("Title: %s\n", [book.title UTF8String]);
-    printf("Author: %s\n--\n", [book.author UTF8String]);
+  for (NSDictionary* book in niigata.books){
+    printf("Title: %s\n", [[book objectForKey: @"title"] UTF8String]);
+    printf("Author: %s\n--\n", [[book objectForKey: @"author"] UTF8String]);
   }
 
   [pool drain];
